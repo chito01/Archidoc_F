@@ -1,0 +1,33 @@
+﻿@model List<Archidoc_F.Models.Liste_documents>
+@{
+    Layout = "_Layout_sectionRec";
+    ViewData["Title"] = "Liste des services de provenance";
+}
+<a asp-area="" asp-controller="Home" asp-action="Affichage_Se" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+    <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
+</a>
+<h2>@ViewData["Title"]</h2>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Numero_Service</th>
+                <th scope="col">Code Service</th>
+                <th scope="col">Nom service</th>
+
+            </tr>
+        </thead>
+       
+        <tbody>
+            @foreach (var ab in Model) {
+        <tr>
+            <td>@ab.numero_service</td>
+            <td>@ab.code_service</td>
+            <td>@ab.nom_service</td>
+        </tr>
+            }
+            
+        </tbody>
+    </table>
+</div>
+

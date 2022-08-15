@@ -1,0 +1,82 @@
+﻿@model Archidoc_F.Models.InscriptionModelcs
+@{
+    ViewData["Title"] = "Inscription";
+}<div class="container">
+    <h4 class="h2">Inscrivez-vous,en creant un compte !</h4>
+    <hr class="featurette-divider">
+    <br />
+    <div class="row ">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-xl-8" style="width:18rem">
+                        <img class="bd-placeholder-img " width="290" height="250" src="~/images/archi.png" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /><rect width="100%" height="100%" fill="#dee2e6"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Archidoc</h5>
+                            <p class="card-text">Creez votre compte archidoc,pour palper du doigt la gestion facile,securisé et efficace des documents dans un service des archives.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+            @using (Html.BeginForm())
+            {
+                @if (TempData["valide"] != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        @TempData["valide"]
+                    </div>
+                }
+                <div class="form-group">
+                    <label for="validationCustom01" class="form-label">Nom utilisateur</label>
+                    @Html.TextBoxFor(m => m.nom_user, new { @class = "form-control w-50" })
+                    @Html.ValidationMessageFor(m => m.nom_user)
+                </div>
+                <div class="form-group">
+                    <label for="validationCustom02" class="form-label">prenom utilisateur</label>
+                    @Html.TextBoxFor(m => m.prenom_user, new { @class = "form-control w-50" })
+                    @Html.ValidationMessageFor(m => m.prenom_user)
+                </div>
+                <div class="form-group">
+                    <label for="validationCustomUsername" class="form-label">Mot de passe</label>
+                    @Html.PasswordFor(m => m.password, new { @class = "form-control w-50" })
+                    @Html.ValidationMessageFor(m => m.password)
+                </div>
+                <div class="form-group">
+                    <label for="validationCustom04" class="form-label">Sexe</label>
+
+                    @Html.TextBoxFor(m => m.sexe, new { @class = "form-control w-50" })
+                    @Html.ValidationMessageFor(m => m.sexe)
+
+                </div>
+
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Acceptez toutes les conditions etablies !
+                        </label>
+                        <div class="invalid-feedback">
+                            Il est obligatoire de validé pour continuer
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="col-12">
+                    <input type="submit" class="btn btn-success" value="valider">
+                    <input type="reset" class="btn btn-warning" value="initialiser">
+                </div>
+
+
+            }
+        </div>
+
+        <p> </p>
+    </div>
+    </div>

@@ -1,0 +1,83 @@
+﻿@model Archidoc_F.Models.Liste_documents
+@{
+    Layout = "_Layout_sectionR";
+    ViewData["Title"] = "Mise à jour documents";
+}
+
+<div class="container-xxl py-6" id="features">
+    <div class="container-fluid">
+        <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Mise à jour des documents</h1>
+            <p class="mb-5">Vous pouvez ajouter, modifier ou encore supprimer tous les intitules de documents facilement en un clic.</p>
+        </div>
+        <div class="row g-4">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ajouter un intitule</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a class="btn btn-outline-secondary text-sm-center"asp-area="" asp-controller="Home" asp-action="ID">Ouvrir la suppression</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ajouter un intitule</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a class="btn btn-outline-secondary text-sm-center" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@@mdo">Ouvrir l'insertion'</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Modifier un intitule</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a class="btn btn-outline-secondary text-sm-center" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@@mdo">Ouvrir la modification</a>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                                    <input type="text" class="form-control" id="recipient-name">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="message-text" class="col-form-label">Message:</label>
+                                                    <textarea class="form-control" id="message-text"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Send message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-outline-secondary text-sm-center">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+</div>

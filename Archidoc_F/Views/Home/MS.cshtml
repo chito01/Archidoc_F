@@ -1,0 +1,49 @@
+﻿@model Archidoc_F.Models.Liste_documents
+@{
+    Layout = "_Layout_sectionRec";
+    ViewData["Title"] = "Accueil Archivage";
+}
+<div class="container">
+    <br /> <br /> <br />
+    <h4 class="h2">Supprimer service de provenance !</h4>
+    <hr class="featurette-divider">
+    <br />
+    <div class="col-lg-12">
+        @using (Html.BeginForm())
+        {
+            @if (TempData["valide"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @TempData["valide"]
+                </div>
+            }
+            <div class="form-group">
+                <label for="validationCustom01" class="form-label">Code service</label>
+                @Html.TextBoxFor(m => m.code_service, new { @class = "form-control w-150" })
+                @Html.ValidationMessageFor(m => m.code_service)
+            </div>
+            <div class="form-group">
+                <label for="validationCustom02" class="form-label">Nom service</label>
+                @Html.TextBoxFor(m => m.nom_service, new { @class = "form-control w-150" })
+                @Html.ValidationMessageFor(m => m.nom_service)
+            </div>
+            <br />
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Acceptez toutes les conditions etablies !
+                    </label>
+                    <div class="invalid-feedback">
+                        Il est obligatoire de validé pour continuer
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="col-12">
+                <input type="submit" class="btn btn-success" value="valider">
+                <input type="reset" class="btn btn-warning" value="initialiser">
+            </div>
+        }
+    </div>
+</div>

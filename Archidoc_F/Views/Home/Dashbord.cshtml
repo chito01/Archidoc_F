@@ -1,0 +1,36 @@
+﻿@model Archidoc_F.Models.LoginModel
+@{
+    Layout = "_Layoutdashbord";
+    ViewData["Title"] = "Dashbord";
+}
+@ViewBag.M
+<div class="p-5 mb-4 bg-light rounded-3">
+    <h1 class="display-4 fw-bold">Bienvenue au menu principal</h1>
+    <div class="container-fluid py-4">
+        <p class="col-md-8  ">
+           Nous sommes content de vous revoir. Archidoc est un logiciel conçu uniquement pour vous, agents du service des archives de la CNSS. Vous devez à present choisir quelle section à utiliser :
+        </p>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card border-secondary">
+            <div class="card-body">
+                <h4 class="card-title">Section classement et reception</h4>
+                <p class="card-text">Cette section vous permet de manipuler les documents entrant jusqu'au processus d'archivages,tout en respectant l'execution des tâches quotidiennes du service.</p>
+                <a  asp-area="" asp-controller="Home" asp-action="S_reception" class="btn btn-outline-secondary">Ouvrir la section</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card border-secondary">
+            <div class="card-body ">
+                <h4 class="card-title">Section communication et versement</h4>
+                <p class="card-text">Cette section vous permet de communiquer avec le monde exterieur concernant les documents archivés ou pas.</p>
+                <a asp-area="" asp-controller="Home" asp-action="S_communication" class="btn btn-outline-secondary">Ouvrir la section</a>
+            </div>
+        </div>
+    </div>
+</div>

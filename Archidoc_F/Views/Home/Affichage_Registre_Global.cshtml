@@ -1,0 +1,44 @@
+﻿@model List<Archidoc_F.Models.Liste_documents>
+@{
+    Layout = "_Layout_sectionRec";
+    ViewData["Title"] = "Registre global";
+}
+<h2>@ViewData["Title"]</h2>
+<a asp-area="" asp-controller="Home" asp-action="Affichage_Registre_Glo" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+    <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
+</a>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Nom_Employeur</th>
+                    <th scope="col">Categorie Employeur</th>
+                    <th scope="col">Nom Commune</th>
+                    <th scope="col">Numero Affiliation</th>
+                    <th scope="col">Nom Document</th>
+                    <th scope="col">Periodicite</th>
+                    <th scope="col">Categorie Document</th>
+                    <th scope="col">Categorie de provenance</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var ab in Model)
+                {
+                    <tr>
+                        <td>@ab.nom_Employeur</td>
+                        <td>@ab.nom_TypeE</td>
+                        <td>@ab.nom_commune</td>
+                        <td>@ab.numero_Affiliation</td>
+                        <td>@ab.nom_document</td>
+                        <td>@ab.Libelle_periode</td>
+                        <td>@ab.type_Document</td>
+                        <td>@ab.nom_service</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+

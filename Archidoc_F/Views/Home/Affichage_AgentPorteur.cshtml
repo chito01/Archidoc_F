@@ -1,0 +1,29 @@
+﻿@model List<Archidoc_F.Models.Liste_documents>
+@{
+    Layout = "_Layout_sectionRec";
+    ViewData["Title"] = "Repertoire Agent Porteur";
+}
+<h2>@ViewData["Title"]</h2>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Nom Agent</th>
+                <th scope="col">Prenom Agent</th>
+                <th scope="col">Service Provenance</th>
+            </tr>
+        </thead>
+       
+        <tbody>
+            @foreach (var ab in Model) {
+            <tr>
+                <td>@ab.Nom_utilisateur</td>
+                <td>@ab.Prenom_utilsateur</td>
+                <td>@ab.nom_service </td>
+            </tr>
+            }
+            
+        </tbody>
+    </table>
+</div>
+

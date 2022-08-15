@@ -1,0 +1,56 @@
+﻿@model Archidoc_F.Models.LoginModel
+
+@{
+    Layout = "_LayoutSection";
+    ViewData["Title"] = "Login";
+}
+<h2 class="display-4">Connexion</h2>
+<br />
+<div class="row ">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-md-8" style="width:18rem">
+                    <img class="bd-placeholder-img " width="100%" height="250" src="~/images/archi.png" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /><rect width="100%" height="100%" fill="#dee2e6"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Archidoc</h5>
+                        <p class="card-text">Connectez-vous à votre compte archidoc,pour palper du doigt la gestion facile,securisé et efficace des documents dans un service des archives.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-6">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <h2 >Se connecter</h2>
+            if (ViewData["name"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewData["name"]
+                </div>
+            }
+            @Html.ValidationSummary(true)
+            <div class="form-group ">
+                <label for="Username">Username</label>
+                @Html.TextBoxFor(m => m.username, new { @class = "form-control w-50" })
+                @Html.ValidationMessageFor(m => m.username)
+               
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                @Html.PasswordFor(m => m.password, new { @class = "form-control w-50" })
+                @Html.ValidationMessageFor(m => m.password)
+            </div>
+            <br />
+            <button type="submit" class="btn btn-success" value="valider"> Valider</button>
+        }
+
+    </div>
+</div>
